@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="ml-5">Edit Form</h1>
+</div>
+<div class="row">
+  <div class="col">
+    <form #formCtrl="ngForm" ngNativeValidate>
+      <div class="form-group">
+        <label for="task">Task</label>
+        <input type="text" class="form-control" id="task" name="name" [(ngModel)]="toDoService.tasks[id].name"
+          ngControl="fieldCtrl" required>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" class="form-control" name="category" [(ngModel)]="toDoService.tasks[id].category" ngControl="fieldCtrl"
+          required>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="status" [(ngModel)]="toDoService.tasks[id].status">
+        <label class="form-check-label" for="status">Completed</label>
+      </div>
+      <!-- <button type="reset" class="btn btn-warning mr-2" (click)="clearSearch()">Clear</button> -->
+      <!-- <button [disabled]="!formCtrl.form.valid" class="btn btn-primary ml-2" (click)="onSubmitClicked()" type="button">Submit</button> -->
+    </form>
+  </div>
+</div>

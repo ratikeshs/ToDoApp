@@ -1,0 +1,38 @@
+<!-- New Button on List Page -->
+<div class="row">
+  <div class="col">
+    <div class="row">
+      <div class="col ml-auto">
+        <button class="float-right btn btn-outline-info mt-2 mb-2"
+         (click)="onNewButtonClick()">New Category</button>
+      </div>
+    </div>
+
+    <table class="table" id="table">
+      <thead>
+        <tr>
+          <th scope="col">Category Name</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories; let i=index">
+          <td>{{ category.name }}</td>
+          <td>
+            <div class="row">
+              <div class="col">
+                <button type="button" class="btn btn-primary mr-2" 
+                (click)="onEditButtonClicked(i)">Edit</button>
+                <button type="button" value="Remove" class="btn btn-danger" 
+                (click)="deleteFieldValue(category)">Delete</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>

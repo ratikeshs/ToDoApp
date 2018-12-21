@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">To-Do-App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <button class="btn btn-outline-info mr-2" [routerLink]="['/todo']">ToDo</button>
+  <div class="dropdown">
+    <button class="float-right btn btn-outline-info" [routerLink]="['/category']">Category</button>
+  </div>
+</nav>
+<router-outlet></router-outlet>
