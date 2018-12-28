@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 class="ml-5">Edit Form</h1>
+</div>
+<div class="row">
+  <div class="col">
+    <form #formCtrl="ngForm" ngNativeValidate>
+      <div class="form-group">
+        <label for="task">Task</label>
+        <input type="text" class="form-control" id="task" name="name" [value]="toDoService.tasks[id].name" #name
+          ngControl="fieldCtrl" min="1" required>
+      </div>
+      <div class="form-group">
+        <select class="hideLabel form-control" #category>
+          <option selected="">{{toDoService.tasks[id].category}}</option>
+          <option *ngFor="let cate of categories">
+          {{cate.category}}
+          </option>
+          </select>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="status" [checked]="toDoService.tasks[id].status" #status>
+        <label class="form-check-label" for="status">Completed</label>
+      </div>
+      <button type="reset" class="btn btn-warning mr-2" (click)="clearSearch()">Clear</button>
+      <button [disabled]="!formCtrl.form.valid" class="btn btn-primary ml-2" (click)="onSubmitClicked( name, status )" type="button">Submit</button>
+    </form>
+  </div>
+</div>
